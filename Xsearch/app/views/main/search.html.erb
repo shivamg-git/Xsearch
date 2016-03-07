@@ -1,0 +1,18 @@
+<div class="w3-row">
+  <div class="w3-half w3-container">
+    <% @results.each do |result| %>
+      <div class="w3-card-4">
+        <div class="w3-container">
+          <%= link_to result.eng_word , result.eng_word_url , target: "_blank"%>
+          <span> = </span>
+          <%= link_to result.hin_word , result.hin_word_url , target: "_blank"%>
+          <span>( <%= link_to result.pr , result.pr_url , target: "_blank"%> ) </span>
+          <span><%= result.grm %></span>
+          <% unless result.usage.blank? %>
+            <p><b>Usage : </b><em><%= result.usage %></em></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
